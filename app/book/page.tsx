@@ -7,6 +7,7 @@ import BranchStep from "@/components/booking/BranchStep";
 import ServiceStep from "@/components/booking/ServiceStep";
 import StylistStep from "@/components/booking/StylistStep";
 import DateTimeStep from "@/components/booking/DateTimeStep";
+import CustomerInfoStep, { type CustomerInfo } from "@/components/booking/CustomerInfoStep";
 import ConfirmStep from "@/components/booking/ConfirmStep";
 import type { Branch } from "@/data/branches";
 import type { Service } from "@/data/services";
@@ -19,12 +20,13 @@ export default function BookPage() {
   const [stylist, setStylist] = useState<Stylist | null>(null);
   const [date, setDate] = useState<string | null>(null);
   const [time, setTime] = useState<string | null>(null);
+  const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="max-w-2xl mx-auto px-4 py-10">
-        {step < 5 && <StepIndicator currentStep={step} />}
+        {step < 6 && <StepIndicator currentStep={step} />}
 
         <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8">
           <div key={step} className="step-animate">
@@ -54,19 +56,25 @@ export default function BookPage() {
                 onTimeSelect={setTime}
               />
             )}
-            {step === 5 && branch && service && stylist && date && time && (
+            {step === 5 && (
+              <CustomerInfoStep
+                onSubmit={(info) => { setCustomerInfo(info); setStep(6); }}
+              />
+            )}
+            {step === 6 && branch && service && stylist && date && time && customerInfo && (
               <ConfirmStep
                 branch={branch}
                 service={service}
                 stylist={stylist}
                 date={date}
                 time={time}
+                customerInfo={customerInfo}
               />
             )}
           </div>
         </div>
 
-        {step >= 2 && step < 5 && (
+        {step >= 2 && step < 6 && (
           <div className="flex justify-between items-center mt-6">
             <button
               onClick={() => setStep((s) => s - 1)}
@@ -80,7 +88,7 @@ export default function BookPage() {
                 onClick={() => setStep(5)}
                 className="cursor-pointer px-8 py-2.5 rounded-full bg-pink-500 text-white font-medium hover:bg-pink-600 transition-colors text-sm"
               >
-                Confirm Booking
+                Next →
               </button>
             )}
           </div>

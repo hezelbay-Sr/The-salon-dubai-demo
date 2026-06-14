@@ -1,4 +1,4 @@
-const steps = ["Branch", "Service", "Stylist", "Date & Time", "Confirm"];
+const steps = ["Branch", "Service", "Stylist", "Date & Time", "Your Details"];
 
 export default function StepIndicator({ currentStep }: { currentStep: number }) {
   return (

@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Branch } from "@/data/branches";
 import type { Service } from "@/data/services";
 import type { Stylist } from "@/data/stylists";
+import type { CustomerInfo } from "@/components/booking/CustomerInfoStep";
 
 const CONFETTI = [
   { color: "#f9a8d4", left: "10%", delay: "0s",    duration: "1.8s", size: 10, shape: "rect" },
@@ -26,12 +27,14 @@ export default function ConfirmStep({
   stylist,
   date,
   time,
+  customerInfo,
 }: {
   branch: Branch;
   service: Service;
   stylist: Stylist;
   date: string;
   time: string;
+  customerInfo: CustomerInfo;
 }) {
   return (
     <div className="text-center py-4 relative overflow-hidden">
@@ -59,6 +62,7 @@ export default function ConfirmStep({
 
       <div className="bg-pink-50 rounded-2xl p-6 text-left max-w-sm mx-auto space-y-3 mb-8">
         {[
+          { label: "Name",    value: customerInfo.name },
           { label: "Branch",  value: branch.name },
           { label: "Service", value: service.name },
           { label: "Stylist", value: stylist.name },
