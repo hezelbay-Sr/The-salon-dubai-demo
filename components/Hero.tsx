@@ -13,7 +13,7 @@ export default function Hero() {
         Beauty. Precision. <span className="text-pink-500">Excellence.</span>
       </p>
       <p className="text-gray-400 text-base mb-10 max-w-xl mx-auto">
-        Book your appointment online — no WhatsApp, no waiting. Choose your branch, service, and stylist in seconds.
+        Book your appointment online — no waiting. Choose your branch, service, and stylist in seconds.
       </p>
       <Link
         href="/book"

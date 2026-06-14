@@ -13,9 +13,11 @@ export default function Footer() {
             <h4 className="font-semibold mb-3">Our Branches</h4>
             <ul className="text-gray-400 text-sm space-y-2">
               <li>JBR — Jumeirah Beach Residence</li>
-              <li>Dubai Mall — Fashion Avenue</li>
+              <li>Palm Jumeirah</li>
               <li>Marina — Marina Walk</li>
-              <li>Business Bay — Bay Square</li>
+              <li>JVC — Jumeirah Village Circle</li>
+              <li>Al Furjan</li>
+              <li>Al Wasl Road</li>
             </ul>
           </div>
           <div>

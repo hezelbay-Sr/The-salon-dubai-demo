@@ -2,7 +2,7 @@ const steps = [
   {
     number: "01",
     title: "Choose Your Branch",
-    desc: "Select from our 4 locations across Dubai — JBR, Dubai Mall, Marina, or Business Bay.",
+    desc: "Select from our 10+ locations across Dubai — JBR, Palm Jumeirah, Marina, JVC, Al Furjan, Al Wasl, and more.",
   },
   {
     number: "02",
