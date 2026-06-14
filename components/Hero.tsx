@@ -26,7 +26,7 @@ export default function Hero() {
         {[
           { value: "4.7★", label: "Google Rating" },
           { value: "837+", label: "Reviews" },
-          { value: "4", label: "Branches" },
+          { value: "10+", label: "Locations" },
           { value: "80+", label: "Services" },
         ].map((stat) => (
           <div key={stat.label} className="text-center">
